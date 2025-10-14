@@ -1,0 +1,14 @@
+flowchart TD
+    start(("Start")) --> Variables["Initialize<br>Destination=Domestic\International<br>membership=standard\premium<br>base_shipping=10<br>weight=25<br>discount=20% Premium Discount: "]
+    --> CheckWeight{"is weight more than 20?"}
+    --> |True| Addtotal["price +5 "] --> MArk["marks overweight as True"]
+
+    CheckWeight -->
+    CheckMember --> |False| CheckDestination{"is the destination international?"}
+    --> |True| DoublePrice["price**2"]
+
+    CheckMember{"is a premium member?"}
+    --> |True| Discounted["price 20% discount(* 0.8)"] --> Ah["Adds Yes to discount"]
+
+    Variables --> Printoutdetails[\"Print out the details"\]
+    
