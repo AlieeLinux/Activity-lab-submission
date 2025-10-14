@@ -1,0 +1,30 @@
+flowchart TD
+    start(("Start"))
+    subgraph Try["Try Block"]
+        variables["Initialize<br>Base_Price=12"]
+        --> AgeInput[/"Enter age"/]
+        --> enterifStudent[/"enter Is he/she a student"/]
+        --> |true| SetVartrue["is_student = True"]
+        enterifStudent --> |false| SetVarFalse["is_student = False"]
+        
+        --> KidCheck{"is age is less than or equal to 12?"}
+        --> |False| IsheASenior{"is age is greater than or equal to 65?"}
+
+        --> |False| IsheAStudent{"Is it an student?"}
+        --> |True| StudentDiscount["FinalPrice = Base_Price - 2"]
+        --> Z["Your ticket price is {FinalPrice}(10)"]
+        
+        IsheAStudent --> |False| NormalPrice["Your ticket price is {Base_Price}(12)"] 
+
+        IsheASenior --> |True| SeniorDiscount["FinalPrice = Base_Price - 4"]
+        --> X[\"Your ticket price is {FinalPrice}(8)"\] 
+
+        KidCheck --> |True| KidDiscount["FinalPrice = Base_Price - 3"]
+        --> W[\"Your ticket price is {FinalPrice}(9)"\]
+
+        SetVartrue --> KidCheck
+        enterifStudent --> |else| Raise["raises exception"]
+    end
+
+    Try --> |Exception| F["Enter the valid requests"] --> Exit
+    start --> variables
