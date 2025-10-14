@@ -1,0 +1,21 @@
+flowchart TD
+    Start(("Start"))
+    subgraph Try["Try Block"]
+        Variables["Variables<br>username=Kyouko<br>password=MyPassword<br>is_2fa_enabled=False<br>2facode=123456"]
+        --> EnterUser[/"input_username"/]
+        --> check2fa{"Is 2fa enabled?"} 
+        --> Enter2fa["Enter your 2fa code"]
+        -->|True| 2facode{"Is 2fa code is correct?"}
+        --> |True| Login
+
+
+        check2fa --> |false| EnterPassword[/"input_password"/]
+
+        EnterPassword --> CheckUser{"Is username is the same?"}
+        --> |True| CheckPassword{"Is the password correct?"}
+        --> |true| Login["Login successful!"]
+
+        2facode --> |False| Loginfailed["Login Failed!"]
+        CheckPassword --> |False| Loginfailed
+        CheckUser --> |False| Loginfailed
+    end
