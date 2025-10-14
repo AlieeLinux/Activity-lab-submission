@@ -1,24 +1,5 @@
-"""The Shipping Cost Calculator with Rules
-Write a program that calculates shipping costs based on the following complex rules:
-
-- The base shipping cost is $10.
-- If the order total weight is over 20 pounds, add $5.
-- If the shipping destination is "international", double the total cost.
-- However, if the customer is a "premium" member, they get a 20% discount on the final cost and are exempt from the international surcharge.
-
-Instructions:
-
-1. Create variables for weight, destination ("domestic" or "international"), and membership ("standard" or "premium").
-2. Use arithmetic operators to calculate the costs.
-3. Use logical operators (and, or, not) to check the conditions for the premium member exemption and other rules.
-4. Print a detailed breakdown of the final shipping cost.
-
-Example Output:
-
-Weight (lbs): 25
-Destination (domestic/international): international
-Final Shipping Cost: $12.00
-(Details: Base $10 + Overweight $5, Premium 20% discount applied, International fee waived.)
+"""
+Author: AlieeLinux
 """
 
 Destination="international"
