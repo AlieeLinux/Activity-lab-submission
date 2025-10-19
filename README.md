@@ -1,5 +1,7 @@
 # Hello and welcome to my Task 1 to 5 with bonus activity submission
 
+> Made only with my pure hands
+
 ![Kyoko](./Kyoko.gif)
 
 ## to navigate through my Tasks click these
